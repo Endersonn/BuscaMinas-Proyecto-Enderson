@@ -3,6 +3,15 @@ const
   FacilFilas = 8;
   FacilColumnas = 8;
   FacilMinas = 10;
+  
+   MedioFilas = 16;
+  MedioColumnas = 16;
+  MedioMinas = 40;
+
+  DificilFilas = 16;
+  DificilColumnas = 30;
+  DificilMinas = 99;
+
 
 type
   Tablero = array[1..FacilFilas, 1..FacilColumnas] of char;
