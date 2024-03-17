@@ -124,9 +124,19 @@ clrscr;
   readln(modo);
 
   case modo of
-    1: begin 
-   
+     1: begin 
+    clrscr;
+    InicializarTablero(tablero1, FacilFilas, FacilColumnas, FacilMinas); 
+    // Mostrar el tablero inicial (sin revelar las minas)
+  MostrarTablero(tablero1, FacilFilas, FacilColumnas, false);
+
+  // Empezar el juego
+  Jugar(tablero1, FacilFilas, FacilColumnas);
+  writeln;
+  writeln('preciona Enter para volver a el menu');
+  readln;
     end;
+    
     
     
     2: begin 
