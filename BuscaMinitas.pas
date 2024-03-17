@@ -1,5 +1,6 @@
 program BuscaMinitas;
 uses crt;
+var i2 , j2 : integer;
 const
   FacilFilas = 8;
   FacilColumnas = 8;
@@ -99,6 +100,13 @@ end;
 
 begin
 repeat
+clrscr;
+  randomize; // Inicializar el generador de numeros aleatorios
+
+  // Inicializar todas las casillas como no descubiertas
+  for i2 := 1 to FacilFilas do
+    for j2 := 1 to FacilColumnas do
+      casillasDescubiertas1[i2,j2] := false;
   writeln('[][][][][][][][][][][][][][][][][][]');
   writeln('[]                                []');
   writeln('[]      Elige el modo de juego    []');
