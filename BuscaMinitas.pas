@@ -20,6 +20,50 @@ var
   modo: integer;
   tablero1: Tablero;
   casillasDescubiertas1: CasillasDescubiertas;
+  
+  procedure InicializarTablero(var tablero: Tablero; filas, columnas, minas: integer);
+var
+  i, j, minasColocadas: integer;
+begin
+  // Inicializar el tablero con ceros (casillas vacias)
+  for i := 1 to filas do
+    for j := 1 to columnas do
+      tablero[i][j] := '0';
+
+  // Colocar las minas en posiciones aleatorias
+  minasColocadas := 0;
+  while minasColocadas < minas do
+  begin
+    i := random(filas) + 1;
+    j := random(columnas) + 1;
+    if tablero[i][j] <> '*' then
+    begin
+      tablero[i][j] := '*';
+      minasColocadas := minasColocadas + 1;
+    end;
+  end;
+end;
+
+procedure MostrarTablero(tablero: Tablero; filas, columnas: integer; mostrarMinas: boolean);
+var
+  i, j: integer;
+begin
+  for i := 1 to filas do
+  begin
+    for j := 1 to columnas do
+    begin
+      if (mostrarMinas and (tablero[i][j] = '*')) then
+        write('* ')
+      else if casillasDescubiertas1[i,j] then
+        write(tablero[i][j], ' ')
+      else
+        write('# '); // Representacion de una casilla no descubierta
+    end;
+    writeln;
+  end;
+end;
+
+
 begin
 repeat
   writeln('[][][][][][][][][][][][][][][][][][]');
