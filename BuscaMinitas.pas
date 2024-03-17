@@ -140,9 +140,31 @@ clrscr;
     
     
     2: begin 
+    clrscr;
+    InicializarTablero(tablero1, MedioFilas, MedioColumnas, MedioMinas); 
+    
+      MostrarTablero(tablero1, MedioFilas, MedioColumnas, false);
+
+  // Empezar el juego
+      Jugar(tablero1, MedioFilas, MedioColumnas);
+      writeln;
+	writeln('preciona Enter para volver a el menu');
+	readln;
+    
    
     end;
     3: begin
+     clrscr;
+    InicializarTablero(tablero1, DificilFilas, DificilColumnas, DificilMinas);
+    
+     // Mostrar el tablero inicial (sin revelar las minas)
+	MostrarTablero(tablero1, DificilFilas, DificilColumnas, false);
+
+  // Empezar el juego
+	Jugar(tablero1, DificilFilas, DificilColumnas);
+     writeln;
+     writeln('preciona Enter para volver a el menu');
+     readln;
  
     end;
     4: begin 
