@@ -1,4 +1,5 @@
 program BuscaMinitas;
+uses crt;
 const
   FacilFilas = 8;
   FacilColumnas = 8;
@@ -61,6 +62,38 @@ begin
     end;
     writeln;
   end;
+end;
+
+procedure Jugar(var tablero: Tablero; filas, columnas: integer);
+var
+  fila, columna: integer;
+begin
+
+
+  repeat
+    writeln('Ingresa una fila y una columna [Primero la fila y luego la comulna] ');
+    readln(fila, columna);
+
+    if (fila < 1) or (fila > filas) or (columna < 1) or (columna > columnas) then
+      writeln('Fila o Columna invadilas. Intentalo de nuevo con posiciones que existan.')
+    else if casillasDescubiertas1[fila,columna] then
+      writeln('Esta casilla ya ha sido seleccionada y revelada. Intentalo de nuevo con otra posicion.')
+    else if tablero[fila][columna] = '*' then
+    begin
+      clrscr;
+      writeln('PERDISTE.... Has presionado una mina');
+       // Revela todas las minas en el tablero del jugador
+	MostrarTablero(tablero, filas, columnas, true); // Mostrar todas las minas
+      exit;
+    end
+    else
+    begin
+      writeln('Has encontrado una casilla segura! vuelva a intentarlo');
+      // Marcar la casilla como descubierta
+      casillasDescubiertas1[fila][columna] := true;
+      MostrarTablero(tablero, filas, columnas, false); // Mostrar el tablero actualizado
+    end;
+  until false;
 end;
 
 
