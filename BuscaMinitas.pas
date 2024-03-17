@@ -1,6 +1,16 @@
 program BuscaMinitas;
+const
+  FacilFilas = 8;
+  FacilColumnas = 8;
+  FacilMinas = 10;
+
+type
+  Tablero = array[1..FacilFilas, 1..FacilColumnas] of char;
+  CasillasDescubiertas = array[1..FacilFilas, 1..FacilColumnas] of boolean;
 var
   modo: integer;
+  tablero1: Tablero;
+  casillasDescubiertas1: CasillasDescubiertas;
 begin
 repeat
   writeln('[][][][][][][][][][][][][][][][][][]');
