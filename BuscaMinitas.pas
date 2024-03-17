@@ -6,13 +6,13 @@ const
   FacilColumnas = 8;
   FacilMinas = 10;
   
-   MedioFilas = 16;
-  MedioColumnas = 16;
-  MedioMinas = 40;
+   MedioFilas = 8;
+  MedioColumnas = 8;
+  MedioMinas = 25;
 
-  DificilFilas = 16;
-  DificilColumnas = 30;
-  DificilMinas = 99;
+  DificilFilas = 8;
+  DificilColumnas = 8;
+  DificilMinas = 40;
 
 
 type
